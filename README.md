@@ -15,7 +15,18 @@ We store these snapshots in something called a 'repository,' or 'repo' for short
 
 There are a bunch of version control systems (like Subversion, Mercurial, and Bazaar), but Git is pretty much the best.
 
-## Why Git?
-Git is what's called a 'distributed' version control system. It means there is no one master copy of the repository. Instead, everyone who is working on the project has a complete copy of the repository. All the collaborators simply choose one to consistently push their changes to. This means that even if the server that you keep your repo on blows up, every person working on it will still have a functioning copy. This is not the case with other VCS, like Subversion. This also lets git also have very cheap branching - a concept we'll cover soon. Just know that branching will change how you code, and how you think about working on projects. 
+## Why git?
+Git is what's called a 'distributed' version control system. It means there is no one master copy of the repository. Instead, everyone who is working on the project has a complete copy of the repository. All the collaborators simply choose one to consistently push their changes to. This means that even if the server that you keep your repo on blows up, every person working on it will still have a functioning copy. This is not the case with other VCS, like Subversion. This also lets git also have very cheap branching - a concept we'll cover soon. Just know that branching will change how you code, and how you think about working on projects.
 
 And really, it's what everyone is using right now. Subversion has a foothold in a lot of businesses, but a lot of companies are switching over to git as we speak. Not to mention, these days your Github page + LinkedIn profile is basically you're resume for Computer Science jobs. If you're not using Github (or at least working on a lot of side projects that you can give links to), you're going to have a hard time getting a job at a top tech company. They want to see passion, and using git and Github shows that you've got passion for what you do. 
+
+# Let's Get Started!
+Time to do some actual work! We're going to be using git exclusively through the terminal (command prompt on Windows). There are GUI tools out there that will help you out, and while they're great for some things, they abstract away git too much to the point where it will be difficult to understand what's going on. They also don't have a lot of the advanced git commands that you will most likely find yourself using semi-regularly.
+
+Don't worry, to be safe, this guide is written in a way that assumes little to no terminal experience. As long as you understand the idea of files and directories, you should be good.
+
+## Installing git
+If you're using Mac OS or a flavor of Linux, then git is likely already installed on your system. However if it's not, or if you're running Windows, go [here](http://git-scm.com/downloads). They give you pretty good instructions.
+
+## Making a repository
+Open up terminal, and navigate to a directory where you want to keep your projects. A good place may be ```~/dev``` on Mac/Linux or ```C:/dev``` on Windows. From here, run the command ```git init spiderman```. This will create an empty git repository called 'spiderman'. Git puts this in a folder called 'spiderman' for you. Navigate into this directory by typing ```cd spiderman```. Congratulations, you are now in a git repository!
