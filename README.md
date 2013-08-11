@@ -36,14 +36,14 @@ Here's your first git command: ```git status```. Type that, and git will tell yo
 
 ```echo "With great power comes great responsibility." > uncleben.txt```
 
-Now that we have that file, type ```git status``` again. Now it will tell you that you have an _untracked_ file called 'uncleben.txt'. An _untracked_ file is a file that is not currently being versioned by git. As far as git is concerned, this file doesn't really exist. We can tell git to start tracking it by typing ```git add uncleben.txt```. Type ```git status``` again, and you see that git recognizes that you have a new file 'uncleben.txt', and it is ready to be _commited_. 
+Now that we have that file, type ```git status``` again. Now it will tell you that you have an **untracked** file called 'uncleben.txt'. An untracked file is a file that is not currently being versioned by git. As far as git is concerned, this file doesn't really exist. We can tell git to start tracking it by typing ```git add uncleben.txt```. Type ```git status``` again, and you see that git recognizes that you have a new file 'uncleben.txt', and it is ready to be **commited**. 
 
 ## Committing files
 A git _commit_ is one of those snapshots we were talking about earlier. It's the current state of your project at a point in time. We can see our list of commits by typing ```git log```. If you do that now, you'll get an error - because we haven't made any commits yet! So let's make one. Type the following command: 
 
 ```git commit -m "Initial commit."```
 
-We've just made a commit! We also gave the commit a _message_ of "Initial commit." Giving a commit a message is mandatory.  The ```-m``` tells git that we're going to give git the message right now. If we didn't put ```-m``` following by the message, git would open up your default text editor and force you to give a message. There's a lot to say on the subject of how to write a good commit message, but for now just use this ```-m``` syntax and keep your messages to be one sentence or less. 
+We've just made a commit! We also gave the commit a **message** of "Initial commit." Giving a commit a message is mandatory.  The ```-m``` tells git that we're going to give git the message right now. If we didn't put ```-m``` following by the message, git would open up your default text editor and force you to give a message. There's a lot to say on the subject of how to write a good commit message, but for now just use this ```-m``` syntax and keep your messages to be one sentence or less. 
 
 If you type the command ```git log``` you can see that it is now in our log history. Success!
 
@@ -52,12 +52,21 @@ Now that we have a file being tracked by git, we can make some changes. Let's ch
 
 ```echo 'With great power there must also come -- great responsibility!' > uncleben.txt``` 
 
-(Note that we had to use single quotes, othewise the terminal wouldn't allow us to use an exclamation point.) Now that we've made a change, type ```git status```. Git tells us that we've modified uncleben.txt, and that this is 'not staged for commit', or _unstaged_. If a change is _unstaged_ then it will not be captured in our snapshot when we type ```git commit```. In order to have it captured in our snapshot, we must first _stage_ it by using the ```gti add``` command. Type the following:
+(Note that we had to use single quotes, othewise the terminal wouldn't allow us to use an exclamation point.) Now that we've made a change, type ```git status```. Git tells us that we've modified uncleben.txt, and that this is 'not staged for commit', or **unstaged**. If a change is **unstaged** then it will not be captured in our snapshot when we type ```git commit```. In order to have it captured in our snapshot, we must first **stage** it by using the ```gti add``` command. Type the following:
 
 ```git add uncleben.txt```
 
-Not type ```git status``` again. Git will now say that this is a 'change to be committed' or _staged_. Now we can type the following: 
+Not type ```git status``` again. Git will now say that this is a 'change to be committed' or **staged**. Now we can type the following: 
 
 ```git commit -m "Fixed the quote to be the original occurance."```
 
 Type ```git log``` and see that we now have two commits in our history!
+
+### Emphasis on terminology
+Let's take a brief detour and put some emphasis on the terms we just learned. Specifically: **tracked**, **untracked**, **staged**, and **unstaged**. 
+
+**tracked** and **untracked** refer to whether or not the file is actually in the repository. Just because the file is in the folder doesn't mean git is watching it. In fact, there are some instances where we don't want git to track certain files (we'll look at that in another lesson). To track a file, we have to use ```git add``` to start tracking it.
+
+**staged** and **unstaged** refer to changes to files that are already being tracked by git. If a change isn't staged, it won't be added to the next commit. Conversely, if it is staged, then it will be added to the next commit. 
+
+It's important to keep this stuff in mind, because it's not uncommon to be confused with git early on. Knowing and understanding these terms is really important, and will really help if you run into issues.
