@@ -30,3 +30,17 @@ If you're using Mac OS or a flavor of Linux, then git is likely already installe
 
 ## Making a repository
 Open up terminal, and navigate to a directory where you want to keep your projects. A good place may be ```~/dev``` on Mac/Linux or ```C:/dev``` on Windows. From here, run the command ```git init spiderman```. This will create an empty git repository called 'spiderman'. Git puts this in a folder called 'spiderman' for you. Navigate into this directory by typing ```cd spiderman```. Congratulations, you are now in a git repository!
+
+## Adding files
+Here's your first git command: ```git status```. Type that, and git will tell you what the status of your repository is. Right now, it'll tell you that you have nothing to commit. That's because there's nothing in there yet! Let's fix that. We'll make a file called 'uncleben.txt' that has the contents 'With great power comes great responsibility.' You can do that with your text editor of choice, or you can type the following: 
+
+```echo "With great power comes great responsibility." > uncleben.txt```
+
+Now that we have that file, type ```git status``` again. Now it will tell you that you have an _untracked_ file called 'uncleben.txt'. An _untracked_ file is a file that is not currently being versioned by git. As far as git is concerned, this file doesn't really exist. We can tell git to start tracking it by typing ```git add uncleben.txt```. Type ```git status``` again, and you see that git recognizes that you have a new file 'uncleben.txt', and it is ready to be _commited_. 
+
+## Committing files
+A git _commit_ is one of those snapshots we were talking about earlier. It's the current state of your project at a point in time. We can see our list of commits by typing ```git log```. If you do that now, you'll get an error - because we haven't made any commits yet! So let's make one. Type the following command: 
+
+```git commit -m "Initial commit."```
+
+We've just made a commit! We also gave the commit a _message_ of "Initial commit." Giving a commit a message is mandatory.  The ```-m``` tells git that we're going to give git the message right now. If we didn't put ```-m``` following by the message, git would open up your default text editor and force you to give a message. There's a lot to say on the subject of how to write a good commit message, but for now just use this ```-m``` syntax and keep your messages to be one sentence or less. 
