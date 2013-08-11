@@ -44,3 +44,20 @@ A git _commit_ is one of those snapshots we were talking about earlier. It's the
 ```git commit -m "Initial commit."```
 
 We've just made a commit! We also gave the commit a _message_ of "Initial commit." Giving a commit a message is mandatory.  The ```-m``` tells git that we're going to give git the message right now. If we didn't put ```-m``` following by the message, git would open up your default text editor and force you to give a message. There's a lot to say on the subject of how to write a good commit message, but for now just use this ```-m``` syntax and keep your messages to be one sentence or less. 
+
+If you type the command ```git log``` you can see that it is now in our log history. Success!
+
+## Changing files
+Now that we have a file being tracked by git, we can make some changes. Let's change uncleben.txt to say: "With great power there must also come -- great responsibility!" (which is how the quote originally appeared). You can do this in your editor of choice, or you can type:
+
+```echo 'With great power there must also come -- great responsibility!' > uncleben.txt``` 
+
+(Note that we had to use single quotes, othewise the terminal wouldn't allow us to use an exclamation point.) Now that we've made a change, type ```git status```. Git tells us that we've modified uncleben.txt, and that this is 'not staged for commit', or _unstaged_. If a change is _unstaged_ then it will not be captured in our snapshot when we type ```git commit```. In order to have it captured in our snapshot, we must first _stage_ it by using the ```gti add``` command. Type the following:
+
+```git add uncleben.txt```
+
+Not type ```git status``` again. Git will now say that this is a 'change to be committed' or _staged_. Now we can type the following: 
+
+```git commit -m "Fixed the quote to be the original occurance."```
+
+Type ```git log``` and see that we now have two commits in our history!
