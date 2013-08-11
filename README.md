@@ -70,3 +70,80 @@ Let's take a brief detour and put some emphasis on the terms we just learned. Sp
 **staged** and **unstaged** refer to changes to files that are already being tracked by git. If a change isn't staged, it won't be added to the next commit. Conversely, if it is staged, then it will be added to the next commit. 
 
 It's important to keep this stuff in mind, because it's not uncommon to be confused with git early on. Knowing and understanding these terms is really important, and will really help if you run into issues.
+
+## Building up a history
+Before we do any other work, let's give ourselves some more files and commits to play around with. First, let's make a file called 'spidey.txt' and give it the content of:
+```
+                  ,,,, 
+             ,;) .';;;;',
+ ;;,,_,-.-.,;;'_,|I\;;;/),,_
+  `';;/:|:);{ ;;;|| \;/ /;;;\__
+      L;/-';/ \;;\',/;\/;;;.') \
+      .:`''` - \;;'.__/;;;/  . _'-._ 
+    .'/   \     \;;;;;;/.'_7:.  '). \_
+  .''/     | '._ );}{;//.'    '-:  '.,L
+.'. /       \  ( |;;;/_/         \._./;\   _,
+ . /        |\ ( /;;/_/             ';;;\,;;_,
+. /         )__(/;;/_/                (;;'''''
+ /        _;:':;;;;:';-._             );
+/        /   \  `'`   --.'-._         \/
+       .'     '.  ,'         '-,
+      /    /   r--,..__       '.\
+    .'    '  .'        '--._     ]
+    (     :.(;>        _ .' '- ;/
+    |      /:;(    ,_.';(   __.'
+     '- -'"|;:/    (;;;;-'--'
+           |;/      ;;(
+           ''      /;;|
+                   \;;|
+                    \/
+```
+Cute, huh? We can make another one called 'swing.txt' with the content of:
+```
+               :                
+               ;                
+              :                 
+              ;                 
+             /                  
+           o/                   
+         ._/\___,                
+             \                  
+             /                   
+             `      
+```
+
+Perfect. Now you can add thses to your repository using the command ```git add -A```. The ```-A``` adds tracks all untracked files and stages all unstaged changes. You could also add them individually by doing:
+
+```
+git add spidey.txt
+git add swing.txt
+```
+
+Your choice! Now let's commit these by typing ```git commit -m "Added some sweet ASCII art."```
+
+## Going back in time
+Let's say that we don't like this new Uncle Ben quote after it. It may be the original, but hey, the movie quote just sounds better. There are a couple of ways to go about getting different versions of files in git, so we'll go through a couple. Let's start by using the ```git checkout``` command. 
+
+Remember how when you type ```git log```, you see this really long string of letters and numbers next to the word 'commit'? That's called a SHA1 tag (usually pronounced shah-won). It's the unique identifier for the commit. If we want to get a version of a file at a specific commit, we need that identifier. So, copy the SHA1 tag of the initial commit. Now type the following:
+
+```git checkout ab2bacee5cad uncleben.txt``` (or whatever your SHA1 tag is)
+
+You'll see that uncleben.txt now has the contents of 'With great power comes great responsibility.' Cool, huh? Now if you do a ```git status``` you'll see that the change has already been staged for you. You could make a commit and put that file back at the state you wanted it.
+
+But maybe this isn't what you wanted. Maybe you didn't want to get an old version of the file, but an old version of your entire project. You could reset your whole project back to an earlier state by using the ```git reset --hard``` command. If you wanted to go back to your initial commit, you could type: 
+
+```git reset --hard ab2bacee5cad``` (or whatever your SHA1 tag is)
+
+Go ahead and do that now. Then type ```ls``` to see that your new files are gone, and type ```git log``` to see that your commit history has been reset to be as if you were at your initial commit again. But what happens if we didn't want to do that? Where did your files go? What about your commit history? How can you get back to the state you were just at? Have you just lost all of your work?!
+
+### The magic of reflog
+Calm down, your history is still there! There's this magic little command that git has that most people actually don't know about. It's called ```git reflog```. Type that now.
+
+You'll see a list of actions you have performed, and that list includes the normal things like commits, but also things like resets. And you can see here that git still has a history of your commits, even if they don't appear in the ```git log```. So fear not, you should see an entry for a commit with the message of 'Added some sweet ASCII art.' Grab either the SHA1 for that line and type:
+
+```git reset --hard 31320af``` (or whatever your SHA1 tag is)
+
+
+
+
+
