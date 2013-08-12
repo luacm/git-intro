@@ -145,4 +145,15 @@ You'll see a list of actions you have performed, and that list includes the norm
 Now you're back to where you were before the reset! You'll find that with git, you can get yourself out of pretty much any jam as long as you commit at regular intervals.
 
 
+# Key Commands
+As an easy reference, here's a list of commands we learned in this lesson. Note: terms in <> are places where you put your own text. Do not inclue the <> when actually writing the command.
 
+* ```git init <repo-name>```: Initializes an empty git repository with the name you give it.
+* ```git status```: Tells you the status of the files in your repository, including things like stage/unstaged changes, tracked/untracked files, and more.
+* ```git add <filename>```: Tracks an untracked file or stages an unstaged change.
+* ```git add -A```: Tracks all untracked files and stages all unstaged changes.
+* ```git commit -m "<message>"```: Makes a snapshot in time of all of your staged changes with the message you give it.
+* ```git log```: Lists your commit history.
+* ```git checkout <SHA1> <filename>```: Swaps out the file specified with the version of the file that was active in the commit given by the SHA1 tag.
+* ```git reset --hard <SHA1>```: Resets your whole project back to the commit specified by the SHA1 tag. 
+* ```git reflog```: Gives a list of all the snapshots of your project, even if those snapshots are things like resets and merges. It even includes commits that would otherwise not be listed after a ```git reset --hard``` by ```git log```. 
