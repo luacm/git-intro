@@ -145,6 +145,20 @@ You'll see a list of actions you have performed, and that list includes the norm
 Now you're back to where you were before the reset! You'll find that with git, you can get yourself out of pretty much any jam as long as you commit at regular intervals.
 
 
+## Recap
+Let's do a quick run-down of the general workflow we've learned in this lesson. 
+
+1. Create a repository by typing ```git init <repo-name>```.
+2. Create some files.
+3. Track those files using ```git add <filename>```.
+4. Commit those files using ```git commit -m "<message>"```.
+5. Make whatever changes you want, and when you're at a good checkpoint, use ```git add -A``` or ```git add <filename>``` to stage the changes.
+6. Commit your staged changes using ```git commit -m "<message>"```.
+7. Repeat steps 2-6 as necessary.
+
+Then, if you ever need to get an old version of a file, use ```git checkout <SHA1> <filename>```.
+Or, if you want to reset your entire project back to an old commit, use ```git reset --hard <SHA1>```.
+
 # Key Commands
 As an easy reference, here's a list of commands we learned in this lesson. Note: terms in <> are places where you put your own text. Do not inclue the <> when actually writing the command.
 
