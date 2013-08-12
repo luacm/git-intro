@@ -20,7 +20,7 @@ Git is what's called a 'distributed' version control system. It means there is n
 
 And really, it's what everyone is using right now. Subversion has a foothold in a lot of businesses, but a lot of companies are switching over to git as we speak. Not to mention, these days your Github page + LinkedIn profile is basically you're resume for Computer Science jobs. If you're not using Github (or at least working on a lot of side projects that you can give links to), you're going to have a hard time getting a job at a top tech company. They want to see passion, and using git and Github shows that you've got passion for what you do. 
 
-# Let's Get Started!
+# Let's 'Git' Started!
 Time to do some actual work! We're going to be using git exclusively through the terminal (command prompt on Windows). There are GUI tools out there that will help you out, and while they're great for some things, they abstract away git too much to the point where it will be difficult to understand what's going on. They also don't have a lot of the advanced git commands that you will most likely find yourself using semi-regularly.
 
 Don't worry, to be safe, this guide is written in a way that assumes little to no terminal experience. As long as you understand the idea of files and directories, you should be good.
@@ -160,7 +160,8 @@ Then, if you ever need to get an old version of a file, use ```git checkout <SHA
 Or, if you want to reset your entire project back to an old commit, use ```git reset --hard <SHA1>```.
 
 # Key Commands
-As an easy reference, here's a list of commands we learned in this lesson. Note: terms in <> are places where you put your own text. Do not inclue the <> when actually writing the command.
+As an easy reference, here's a list of commands we learned in this lesson. 
+*Note: terms in < > are places where you put your own text. Do not inclue the < > when actually writing the command.*
 
 * ```git init <repo-name>```: Initializes an empty git repository with the name you give it.
 * ```git status```: Tells you the status of the files in your repository, including things like stage/unstaged changes, tracked/untracked files, and more.
