@@ -32,11 +32,11 @@ If you're using Mac OS or a flavor of Linux, then git is likely already installe
 Open up terminal, and navigate to a directory where you want to keep your projects. A good place may be ```~/dev``` on Mac/Linux or ```C:/dev``` on Windows. From here, run the command ```git init spiderman```. This will create an empty git repository called 'spiderman'. Git puts this in a folder called 'spiderman' for you. Navigate into this directory by typing ```cd spiderman```. Congratulations, you are now in a git repository!
 
 ## Adding files
-Here's your first git command: ```git status```. Type that, and git will tell you what the status of your repository is. Right now, it'll tell you that you have nothing to commit. That's because there's nothing in there yet! Let's fix that. We'll make a file called 'uncleben.txt' that has the contents 'With great power comes great responsibility.' You can do that with your text editor of choice, or you can type the following: 
+Here's your first git command: ```git status```. Type that, and git will tell you what the status of your repository is. Right now, it'll tell you that you have nothing to commit. That's because there's nothing in there yet! Let's fix that. We'll make a file called 'uncle_ben.txt' that has the contents 'With great power comes great responsibility.' You can do that with your text editor of choice, or you can type the following: 
 
-```echo "With great power comes great responsibility." > uncleben.txt```
+```echo "With great power comes great responsibility." > uncle_ben.txt```
 
-Now that we have that file, type ```git status``` again. Now it will tell you that you have an **untracked** file called 'uncleben.txt'. An untracked file is a file that is not currently being versioned by git. As far as git is concerned, this file doesn't really exist. We can tell git to start tracking it by typing ```git add uncleben.txt```. Type ```git status``` again, and you see that git recognizes that you have a new file 'uncleben.txt', and it is ready to be **commited**. 
+Now that we have that file, type ```git status``` again. Now it will tell you that you have an **untracked** file called 'uncle_ben.txt'. An untracked file is a file that is not currently being versioned by git. As far as git is concerned, this file doesn't really exist. We can tell git to start tracking it by typing ```git add uncle_ben.txt```. Type ```git status``` again, and you see that git recognizes that you have a new file 'uncle_ben.txt', and it is ready to be **commited**. 
 
 ## Committing files
 A git _commit_ is one of those snapshots we were talking about earlier. It's the current state of your project at a point in time. We can see our list of commits by typing ```git log```. If you do that now, you'll get an error - because we haven't made any commits yet! So let's make one. Type the following command: 
@@ -48,13 +48,13 @@ We've just made a commit! We also gave the commit a **message** of "Initial comm
 If you type the command ```git log``` you can see that it is now in our log history. Success!
 
 ## Changing files
-Now that we have a file being tracked by git, we can make some changes. Let's change uncleben.txt to say: "With great power there must also come -- great responsibility!" (which is how the quote originally appeared). You can do this in your editor of choice, or you can type:
+Now that we have a file being tracked by git, we can make some changes. Let's change uncle_ben.txt to say: "With great power there must also come -- great responsibility!" (which is how the quote originally appeared). You can do this in your editor of choice, or you can type:
 
-```echo 'With great power there must also come -- great responsibility!' > uncleben.txt``` 
+```echo 'With great power there must also come -- great responsibility!' > uncle_ben.txt``` 
 
-(Note that we had to use single quotes, othewise the terminal wouldn't allow us to use an exclamation point.) Now that we've made a change, type ```git status```. Git tells us that we've modified uncleben.txt, and that this is 'not staged for commit', or **unstaged**. If a change is **unstaged** then it will not be captured in our snapshot when we type ```git commit```. In order to have it captured in our snapshot, we must first **stage** it by using the ```gti add``` command. Type the following:
+(Note that we had to use single quotes, othewise the terminal wouldn't allow us to use an exclamation point.) Now that we've made a change, type ```git status```. Git tells us that we've modified uncle_ben.txt, and that this is 'not staged for commit', or **unstaged**. If a change is **unstaged** then it will not be captured in our snapshot when we type ```git commit```. In order to have it captured in our snapshot, we must first **stage** it by using the ```gti add``` command. Type the following:
 
-```git add uncleben.txt```
+```git add uncle_ben.txt```
 
 Not type ```git status``` again. Git will now say that this is a 'change to be committed' or **staged**. Now we can type the following: 
 
@@ -125,9 +125,9 @@ Let's say that we don't like this new Uncle Ben quote after all. It may be the o
 
 Remember how when you type ```git log```, you see this really long string of letters and numbers next to the word 'commit'? That's called a SHA1 tag (usually pronounced shah-won). It's the unique identifier for the commit. If we want to get a version of a file at a specific commit, we need that identifier. So, copy the SHA1 tag of the initial commit. Now type the following:
 
-```git checkout ab2bacee5cad uncleben.txt``` (or whatever your SHA1 tag is)
+```git checkout ab2bacee5cad uncle_ben.txt``` (or whatever your SHA1 tag is)
 
-You'll see that uncleben.txt now has the contents of 'With great power comes great responsibility.', just like it did in that version of the file. Cool, huh? Now if you do a ```git status``` you'll see that the change has already been staged for you. You could make a commit and put that file back at the state you wanted it.
+You'll see that uncle_ben.txt now has the contents of 'With great power comes great responsibility.', just like it did in that version of the file. Cool, huh? Now if you do a ```git status``` you'll see that the change has already been staged for you. You could make a commit and put that file back at the state you wanted it.
 
 But maybe this isn't what you wanted. Maybe you didn't want to get an old version of the file, but an old version of your entire project. You could reset your whole project back to an earlier state by using the ```git reset --hard``` command. If you wanted to go back to your initial commit, you could type: 
 
