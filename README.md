@@ -172,3 +172,5 @@ As an easy reference, here's a list of commands we learned in this lesson.
 * ```git checkout <SHA1> <filename>```: Swaps out the file specified with the version of the file that was active in the commit given by the SHA1 tag.
 * ```git reset --hard <SHA1>```: Resets your whole project back to the commit specified by the SHA1 tag. 
 * ```git reflog```: Gives a list of all the snapshots of your project, even if those snapshots are things like resets and merges. It even includes commits that would otherwise not be listed after a ```git reset --hard``` by ```git log```. 
+* ```git ```: Shows how to use the ```git ``` command and lists commonly used commands in git with a short description.
+* ```git help <command> ```: Displays more information about a specific git command.
