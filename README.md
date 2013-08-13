@@ -125,13 +125,13 @@ Let's say that we don't like this new Uncle Ben quote after all. It may be the o
 
 Remember how when you type ```git log```, you see this really long string of letters and numbers next to the word 'commit'? That's called a SHA1 tag (usually pronounced shah-won). It's the unique identifier for the commit. If we want to get a version of a file at a specific commit, we need that identifier. So, copy the SHA1 tag of the initial commit. Now type the following:
 
-```git checkout ab2bacee5cad uncleben.txt``` (or whatever your SHA1 tag is)
+```git checkout ab2bacee5cad uncleben.txt``` (replace ```ab2bacee5cad``` with your SHA1 tag)
 
 You'll see that uncleben.txt now has the contents of 'With great power comes great responsibility.', just like it did in that version of the file. Cool, huh? Now if you do a ```git status``` you'll see that the change has already been staged for you. You could make a commit and put that file back at the state you wanted it.
 
 But maybe this isn't what you wanted. Maybe you didn't want to get an old version of the file, but an old version of your entire project. You could reset your whole project back to an earlier state by using the ```git reset --hard``` command. If you wanted to go back to your initial commit, you could type: 
 
-```git reset --hard ab2bacee5cad``` (or whatever your SHA1 tag is)
+```git reset --hard ab2bacee5cad``` (replace ```ab2bacee5cad``` with your SHA1 tag)
 
 Go ahead and do that now. Then type ```ls``` to see that your new files are gone, and type ```git log``` to see that your commit history has been reset to be as if you were at your initial commit again. But what happens if we didn't want to do that? Where did your files go? What about your commit history? How can you get back to the state you were just at? Have you just lost all of your work?!
 
@@ -140,7 +140,7 @@ Calm down, your history is still there! There's this magic little command that g
 
 You'll see a list of actions you have performed, and that list includes the normal things like commits, but also things like resets. And you can see here that git still has a history of your commits, even if they don't appear in the ```git log```. So fear not, you should see an entry for a commit with the message of 'Added some sweet ASCII art.' Grab the SHA1 for that line and type:
 
-```git reset --hard 31320af``` (or whatever your SHA1 tag is)
+```git reset --hard 31320af``` (replace ```31320af``` with your SHA1 tag)
 
 Now you're back to where you were before the reset! You'll find that with git, you can get yourself out of pretty much any jam as long as you commit at regular intervals.
 
