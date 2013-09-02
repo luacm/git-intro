@@ -174,3 +174,6 @@ As an easy reference, here's a list of commands we learned in this lesson.
 * ```git reflog```: Gives a list of all the snapshots of your project, even if those snapshots are things like resets and merges. It even includes commits that would otherwise not be listed after a ```git reset --hard``` by ```git log```. 
 * ```git ```: Shows how to use the ```git ``` command and lists commonly used commands in git with a short description.
 * ```git help <command> ```: Displays more information about a specific git command.
+
+#Additional Resources
+* [Git Succinctly](http://net.tutsplus.com/sessions/git-succinctly/): A fantastic guide on getting started with Git.
