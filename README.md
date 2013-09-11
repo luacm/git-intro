@@ -52,7 +52,7 @@ Now that we have a file being tracked by git, we can make some changes. Let's ch
 
 ```echo 'With great power there must also come -- great responsibility!' > uncle_ben.txt``` 
 
-(Note that we had to use single quotes, othewise the terminal wouldn't allow us to use an exclamation point.) Now that we've made a change, type ```git status```. Git tells us that we've modified uncle_ben.txt, and that this is 'not staged for commit', or **unstaged**. If a change is **unstaged** then it will not be captured in our snapshot when we type ```git commit```. In order to have it captured in our snapshot, we must first **stage** it by using the ```gti add``` command. Type the following:
+(Note that we had to use single quotes, othewise the terminal wouldn't allow us to use an exclamation point.) Now that we've made a change, type ```git status```. Git tells us that we've modified uncle_ben.txt, and that this is 'not staged for commit', or **unstaged**. If a change is **unstaged** then it will not be captured in our snapshot when we type ```git commit```. In order to have it captured in our snapshot, we must first **stage** it by using the ```git add``` command. Type the following:
 
 ```git add uncle_ben.txt```
 
