@@ -56,7 +56,7 @@ Now that we have a file being tracked by git, we can make some changes. Let's ch
 
 ```git add uncle_ben.txt```
 
-Not type ```git status``` again. Git will now say that this is a 'change to be committed' or **staged**. Now we can type the following: 
+Now type ```git status``` again. Git will now say that this is a 'change to be committed' or **staged**. Now we can type the following: 
 
 ```git commit -m "Fixed the quote to be the original occurance."```
 
