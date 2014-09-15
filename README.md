@@ -32,7 +32,7 @@ If you're using Mac OS or a flavor of Linux, then git is likely already installe
 Open up terminal, and navigate to a directory where you want to keep your projects. A good place may be ```~/dev``` on Mac/Linux or ```C:/dev``` on Windows. From here, run the command ```git init titans```. This will create an empty git repository called ‘titans’. Git puts this in a folder called ‘titans’ for you. Navigate into this directory by typing ```cd titans```. Congratulations, you are now in a git repository!
 
 ## Adding files
-Here's your first git command: ```git status```. Type that, and git will tell you what the status of your repository is. Right now, it'll tell you that you have nothing to commit. That's because there's nothing in there yet! Let's fix that. We'll make a file called ‘armin.txt' that has the contents 'With great power comes great responsibility.' You can do that with your text editor of choice, or you can type the following: 
+Here's your first git command: ```git status```. Type that, and git will tell you what the status of your repository is. Right now, it'll tell you that you have nothing to commit. That's because there's nothing in there yet! Let's fix that. We'll make a file called ‘armin.txt' that has the contents "On that day, mankind received a grim reminder." You can do that with your text editor of choice, or you can type the following: 
 
 ```echo "On that day, mankind received a grim reminder." > armin.txt```
 
